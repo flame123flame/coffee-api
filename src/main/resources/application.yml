@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+    # active: dev
+  jmx:
+    enabled: false
+  jpa:
+    show-sql: false
+
+# System
+server:
+  servlet:
+    context-path: /coffee-beans
+  port: 8082
+
+#Lotto
+path:
+  thaiGovLotto:
+    api: https://www.glo.or.th/api/lottery/getLatestLottery
+
+# log4j:
+#   logger:
+#     org:
+#       apache:
+#         kafka: OFF
+# logging:
+#   level:
+#     root: OFF
+#     org.springframework: OFF
+#     org.apache: OFF
+#     kafka: OFF
+
+cummon-secert-key:
+  submit-dummy: ∆ß˚πßøßµßπ
+
+close-time-result-yeekee:
+  min: 1
+  second: 180

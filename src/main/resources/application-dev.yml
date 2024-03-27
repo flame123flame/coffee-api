@@ -1,0 +1,32 @@
+# Define Profiles
+spring:
+  profiles: dev
+  redis:
+    host: http://baiwa.ddns.net
+    # host: 192.168.1.125
+    port: 6379
+
+# Database Connection
+main:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://baiwa.ddns.net:7002;databaseName=COP_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
+    username: developer
+    password: Baiwa123
+
+# JWT
+jwt:
+  secret: coffee-secret-key-jwt-api-app
+  # 5 hour (5 * 60 * 60)
+  time-expire: 18000
+
+secert-key:
+  update-lotto: ∆@∂ßπ≠‘“πø¬æ≥≤µ∫Ω≈ç√ƒ∂ß∑†¥¨ˆø£
+common-path:
+  bo: http://baiwa.ddns.net:9440/COFFEE
+  img:
+    api: http://baiwa.ddns.net:9440/COFFEE-FILE
+
+  # kafka
+  kafka-url: localhost:9092
+  
