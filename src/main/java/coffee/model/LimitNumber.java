@@ -3,7 +3,6 @@ package coffee.model;
 import coffee.lottoconfig.vo.req.LimitNumberReq;
 import framework.utils.GenerateRandomString;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Data;
 
 import java.io.Serializable;

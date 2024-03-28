@@ -23,9 +23,9 @@ jwt:
 secert-key:
   update-lotto: ∆@∂ßπ≠‘“πø¬æ≥≤µ∫Ω≈ç√ƒ∂ß∑†¥¨ˆø£
 common-path:
-  bo: http://baiwa.ddns.net:9440/COFFEE
+  bo: http://localhost:8080/COFFEE
   img:
-    api: http://baiwa.ddns.net:9440/COFFEE-FILE
+    api: http://localhost:8084/COFFEE-FILE
 
   # kafka
   kafka-url: localhost:9092

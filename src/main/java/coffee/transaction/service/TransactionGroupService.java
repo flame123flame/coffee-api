@@ -215,14 +215,32 @@ public class TransactionGroupService {
 		return dataTc;
 	}
 
+//	public TransactionGroupDetailRes getLottoGroupDetailByCode(String groupCode) {
+//		TransactionGroupDetailRes dataRes = lottoGroupTransactionDao.getGroupByCode(groupCode);
+//		dataRes.setListTrantsaction(transactionService.getTransactionByGroup(groupCode));
+//		BigDecimal sumPrizeWin = BigDecimal.ZERO;
+//		for (TransactionRes item : dataRes.getListTrantsaction()) {
+//			sumPrizeWin = sumPrizeWin.add(item.getPrizeResult());
+//		}
+//		dataRes.setSumPrizeWin(sumPrizeWin);
+//		return dataRes;
+//	}
+
 	public TransactionGroupDetailRes getLottoGroupDetailByCode(String groupCode) {
 		TransactionGroupDetailRes dataRes = lottoGroupTransactionDao.getGroupByCode(groupCode);
-		dataRes.setListTrantsaction(transactionService.getTransactionByGroup(groupCode));
-		BigDecimal sumPrizeWin = BigDecimal.ZERO;
-		for (TransactionRes item : dataRes.getListTrantsaction()) {
-			sumPrizeWin = sumPrizeWin.add(item.getPrizeResult());
+		if (dataRes != null) {
+			List<TransactionRes> transactionByGroup = transactionService.getTransactionByGroup(groupCode);
+			if (transactionByGroup != null) {
+				dataRes.setListTrantsaction(transactionByGroup);
+				BigDecimal sumPrizeWin = BigDecimal.ZERO;
+				for (TransactionRes item : dataRes.getListTrantsaction()) {
+					if (item != null && item.getPrizeResult() != null) {
+						sumPrizeWin = sumPrizeWin.add(item.getPrizeResult());
+					}
+				}
+				dataRes.setSumPrizeWin(sumPrizeWin);
+			}
 		}
-		dataRes.setSumPrizeWin(sumPrizeWin);
 		return dataRes;
 	}
 

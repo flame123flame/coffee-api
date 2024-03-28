@@ -68,8 +68,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.cors().and().csrf().disable()
 				// dont authenticate this particular request
 				.authorizeRequests()
-				.antMatchers("/**")
-						
+				.antMatchers("/socket/**", "/socket", "/api/transaction-group",
+						"/api/lotto-transaction/get-transaction-bo", "/api/lotto-result/get-lotto-result-by-date",
+						"/api/lotto-result/get-lotto-result-by-lotto-category-code",
+						"/api/lotto-transaction/get-all-lotto-transaction-pay-cost",
+						"/api/web-lotto-result/get-lotto-result", "/api/buy-yeekee/submit-value-sum-dummy","/api/web-lotto-result/get-lotto-result-yeekee",
+						"/api/web-lotto-result/get-lotto-result-stocks")
 				.permitAll()
 				// all other requests need to be authenticated
 				.anyRequest().authenticated().and()

@@ -128,6 +128,7 @@ public class TransactionGroupContoller {
 			response.setStatus(RESPONSE_STATUS.SUCCESS);
 			log.info("Success Calling API TransactionGroupContoller => getLottoGroupDetailByCode");
 		} catch (Exception e) {
+			e.printStackTrace();
 			response.setMessage(RESPONSE_MESSAGE.GET.FAILED);
 			response.setStatus(RESPONSE_STATUS.FAILED);
 			log.error("Error Calling API TransactionGroupContoller => getLottoGroupDetailByCode :" + e);
@@ -162,6 +163,7 @@ public class TransactionGroupContoller {
 			response.setStatus(RESPONSE_STATUS.SUCCESS);
 			log.info("Success Calling API TransactionGroupContoller => getLottoGroupByUserPending");
 		} catch (Exception e) {
+			e.printStackTrace();
 			response.setMessage(RESPONSE_MESSAGE.GET.FAILED);
 			response.setStatus(RESPONSE_STATUS.FAILED);
 			log.error("Error Calling API TransactionGroupContoller => getLottoGroupByUserPending :" + e);

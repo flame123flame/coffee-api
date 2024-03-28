@@ -38,6 +38,7 @@ public class DraftLottoClassController {
             response.setStatus(RESPONSE_STATUS.SUCCESS);
             log.info("Success Calling API DraftLottoClassController => addLottoTime");
         } catch (Exception e) {
+            e.printStackTrace();
             response.setMessage(RESPONSE_MESSAGE.SAVE.FAILED);
             response.setStatus(RESPONSE_STATUS.FAILED);
             log.error("Error Calling API DraftLottoClassController => addLottoTime :" + e);
