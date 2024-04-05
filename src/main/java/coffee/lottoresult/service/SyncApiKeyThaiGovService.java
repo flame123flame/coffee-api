@@ -76,9 +76,10 @@ public class SyncApiKeyThaiGovService {
 		String dateInstallment = data.getResponse().getDate();
 		String thisInstallment = ConvertDateUtils.formatDateToString(new Date(), ConvertDateUtils.YYYY_MM_DD,
 				ConvertDateUtils.LOCAL_EN);
-		if (!thisInstallment.equals(dateInstallment)) {
-			return "BAD_INSTALLMENT:" + dateInstallment;
-		}
+//		ปลดการเช็คเตืมเงิน
+//		if (!thisInstallment.equals(dateInstallment)) {
+//			return "BAD_INSTALLMENT:" + dateInstallment;
+//		}
 
 		List<LottoResult> hasApprove = lottoResultRepo.findByLottoClassCodeAndLottoResultInstallmentAndStatus(
 				lottoClassCode, thisInstallment, ProjectConstant.STATUS.APPROVE);
